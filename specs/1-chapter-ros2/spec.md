@@ -1,15 +1,9 @@
-# Feature Specification: The Robotic Nervous System (ROS 2)
+# Chapter Specification: The Robotic Nervous System (ROS 2)
 
-**Feature Branch**: `1-ros2-nervous-system`
+**Feature Branch**: `1-chapter-ros2`
 **Created**: 2025-12-06
 **Status**: Draft
 **Input**: User description: "Module 1 Topic: The Robotic Nervous System (ROS 2) - Establishing the software communication framework for the humanoid system."
-
-## Clarifications
-
-### Session 2025-12-06
-- Q: What are the performance expectations for the ROS 2 communication layer? → A: Real-time performance is not critical for this educational module.
-- Q: What is the expected level of integration with NVIDIA Isaac ROS components in this module? → A: No integration in this module. Isaac ROS components are covered in later modules.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -39,13 +33,13 @@ As an intermediate technical learner, I want to understand the fundamental primi
 
 ## Requirements *(mandatory)*
 
-### Functional Requirements
+### Content Requirements
 
-- **FR-001**: The textbook MUST clearly explain the concept of a ROS 2 Node and provide a practical example of how to create one in Python.
-- **FR-002**: The textbook MUST explain the publish/subscribe messaging pattern using ROS 2 Topics and provide reproducible code examples.
-- **FR-003**: The textbook MUST explain the request/response communication pattern using ROS 2 Services and provide reproducible code examples.
-- **FR-004**: The textbook MUST explain the long-running task communication pattern using ROS 2 Actions and provide reproducible code examples.
-- **FR-005**: The textbook MUST explain how to launch multiple nodes together using ROS 2 launch files.
+- **CR-001**: The chapter MUST clearly explain the concept of a ROS 2 Node and provide a practical example of how to create one in Python.
+- **CR-002**: The chapter MUST explain the publish/subscribe messaging pattern using ROS 2 Topics and provide reproducible code examples.
+- **CR-003**: The chapter MUST explain the request/response communication pattern using ROS 2 Services and provide reproducible code examples.
+- **CR-004**: The chapter MUST explain the long-running task communication pattern using ROS 2 Actions and provide reproducible code examples.
+- **CR-005**: The chapter MUST explain how to launch multiple nodes together using ROS 2 launch files.
 
 ### Non-Functional Requirements
 - **NFR-001**: Performance for ROS 2 communication is not critical; focus is on conceptual understanding.
@@ -53,7 +47,7 @@ As an intermediate technical learner, I want to understand the fundamental primi
 ### Integration & External Dependencies
 - **INT-001**: Integration with NVIDIA Isaac ROS components is out of scope for this module and will be covered in later modules.
 
-### Key Entities *(include if feature involves data)*
+### Key Concepts
 
 - **ROS 2 Node**: An independent process that performs computation.
 - **ROS 2 Topic**: A named bus over which nodes exchange messages.
