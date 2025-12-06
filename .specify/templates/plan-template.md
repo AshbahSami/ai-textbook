@@ -31,7 +31,12 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **AI-Native Documentation:** Is the feature documentation structured for machine readability?
+- **Actionable Knowledge Base:** Is the content granular and ready for the RAG system?
+- **Comprehensive Coverage:** Does the plan account for all architectural layers (ROS 2 to VLA)?
+- **Technical Accuracy Standard:** Is there a plan for verifying technical details against ROS 2 and NVIDIA Isaac Platform?
+- **Modular Structure Standard:** Does the feature fit within the four-module structure?
+- **Tool-Specific Format:** Is the output planned to be compatible with Claude Code/Spec-Kit Plus?
 
 ## Project Structure
 

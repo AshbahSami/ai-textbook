@@ -1,55 +1,78 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 0.0.0 → 1.0.0
+- Added sections:
+  - Core Principles (The 'Why' for the Book)
+  - Key Standards (The 'How' for the Book)
+  - Success Criteria (The 'What to Deliver')
+  - Constraints (The 'Boundaries')
+- Removed sections:
+  - [PRINCIPLE_1_NAME]
+  - [PRINCIPLE_2_NAME]
+  - [PRINCIPLE_3_NAME]
+  - [PRINCIPLE_4_NAME]
+  - [PRINCIPLE_5_NAME]
+  - [PRINCIPLE_6_NAME]
+  - [SECTION_2_NAME]
+  - [SECTION_3_NAME]
+- Templates requiring updates:
+  - ✅ .specify/templates/plan-template.md
+  - ✅ .specify/templates/spec-template.md
+  - ✅ .specify/templates/tasks-template.md
+-->
+# Physical AI & Humanoid Robotics Textbook Constitution
 
-## Core Principles
+## Core Principles (The 'Why' for the Book)
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### 1. AI-Native Documentation
+The textbook's primary purpose is to serve as the **authoritative knowledge base** for the RAG Chatbot. Documentation must be generated and structured using AI-native tools (e.g., **Claude Code/Spec-Kit Plus**) to ensure efficiency and integration readiness.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### 2. Actionable Knowledge Base
+The book must be optimized for machine readability and retrieval. Content must be clear, granular, and easily translatable into a structured database to maximize the performance of the integrated **RAG system**.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### 3. Comprehensive Coverage
+The final textbook must provide a complete and holistic understanding of the entire system architecture, from the **ROS 2 Nervous System** up through the **VLA Cognitive Brain**.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+---
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Key Standards (The 'How' for the Book)
 
-### [PRINCIPLE_6_NAME]
+### 1. Technical Accuracy Standard
+All content—including code snippets, mathematical derivations, and technical specifications—must be rigorously checked for correctness and align with the latest versions of **ROS 2** and the **NVIDIA Isaac Platform**.
 
+### 2. Modular Structure Standard
+The textbook must be organized into four distinct, sequential modules as outlined in the curriculum, ensuring logical flow and ease of indexing for the **RAG Chatbot**.
 
-[PRINCIPLE__DESCRIPTION]
+### 3. Tool-Specific Format
+The book's final output format and style must comply with the specifications and conventions enforced by the generative tool used (**Claude Code/Spec-Kit Plus**) to ensure compatibility and consistency.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+---
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Success Criteria (The 'What to Deliver')
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### 1. Functional RAG Chatbot
+A fully operational RAG Chatbot (**FastAPI, Agents/ChatKit**) that can accurately query and respond based on the content of the AI-native textbook.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### 2. VLA-Integrated Control
+Successful demonstration of an integrated **Vision-Language-Action (VLA)** model performing cognitive planning and high-level control of a simulated humanoid system.
+
+### 3. Complete Textbook
+A comprehensive, four-module AI-native textbook covering: **ROS 2**, **Digital Twin (Simulation)**, **AI-Robot Brain (Isaac)**, and **VLA Integration**.
+
+---
+
+## Constraints (The 'Boundaries')
+
+### 1. Tool Adherence
+Advice is limited to and must utilize the specified tool stack: **ROS 2**, **NVIDIA Isaac Platform**, **Claude Code/Spec-Kit Plus**, and **OpenAI Agents/ChatKit SDKs**.
+
+### 2. Scope Limitation
+Guidance is strictly limited to the technical scope of the four course modules and the resulting humanoid robotics system. Avoid providing generic LLM or non-robotics advice.
+
+---
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Amendments to this constitution require a documented proposal, review by the project advisors, and a clear migration plan for any affected components. All project artifacts and development activities MUST adhere to these principles and standards.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06
