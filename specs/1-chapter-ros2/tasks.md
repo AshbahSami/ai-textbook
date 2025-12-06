@@ -15,10 +15,10 @@
 
 **Purpose**: Initialize the Docusaurus project and chapter structure.
 
-- [ ] T001 Initialize Docusaurus project (if not already done).
-- [ ] T002 Create chapter directory `docs/chapter1/` for "The Robotic Nervous System (ROS 2)".
-- [ ] T003 Create `index.md` for chapter 1 in `docs/chapter1/index.md` with Docusaurus front-matter.
-- [ ] T004 Add chapter 1 to Docusaurus sidebar configuration `sidebars.js`.
+- [X] T001 Initialize Docusaurus project (if not already done).
+- [X] T002 Create chapter directory `docs/chapter1/` for "The Robotic Nervous System (ROS 2)".
+- [X] T003 Create `index.md` for chapter 1 in `docs/chapter1/index.md` with Docusaurus front-matter.
+- [X] T004 Add chapter 1 to Docusaurus sidebar configuration `sidebars.js`.
 
 ---
 
@@ -26,10 +26,10 @@
 
 **Purpose**: Write content for "1.1 From Digital Brain to Physical Body: Introducing ROS 2".
 
-- [ ] T005 Create section file `docs/chapter1/1.1-introduction.md` with Docusaurus front-matter.
-- [ ] T006 [CR-001] Draft content for "The Conceptual Graph" explaining ROS 2 as a distributed system.
-- [ ] T007 Draft content for "Installation and Environment Setup" including `ros2 run` command.
-- [ ] T008 Draft content for "Core Philosophy of ROS 2".
+- [X] T005 Create section file `docs/chapter1/1.1-introduction.md` with Docusaurus front-matter.
+- [X] T006 [CR-001] Draft content for "The Conceptual Graph" explaining ROS 2 as a distributed system.
+- [X] T007 Draft content for "Installation and Environment Setup" including `ros2 run` command.
+- [X] T008 Draft content for "Core Philosophy of ROS 2".
 
 ---
 
@@ -37,10 +37,10 @@
 
 **Purpose**: Write content for "1.2 Designing the Robot’s Vocabulary: Custom Interfaces".
 
-- [ ] T009 Create section file `docs/chapter1/1.2-custom-interfaces.md` with Docusaurus front-matter.
-- [ ] T010 Draft content for "Creating `.msg` files" with examples.
-- [ ] T011 Draft content for "Creating `.srv` files" with examples.
-- [ ] T012 Draft content for "Creating `.action` files" with examples.
+- [X] T009 Create section file `docs/chapter1/1.2-custom-interfaces.md` with Docusaurus front-matter.
+- [X] T010 Draft content for "Creating `.msg` files" with examples.
+- [X] T011 Draft content for "Creating `.srv` files" with examples.
+- [X] T012 Draft content for "Creating `.action` files" with examples.
 
 ---
 
@@ -48,10 +48,10 @@
 
 **Purpose**: Write content for "1.3 The Heartbeat: Implementing Nodes and Topics".
 
-- [ ] T013 Create section file `docs/chapter1/1.3-nodes-topics.md` with Docusaurus front-matter.
-- [ ] T014 [CR-001] Draft content for "Asynchronous Communication" focusing on Nodes.
-- [ ] T015 [CR-002] Draft content for "Continuous Data Streaming" focusing on Topics.
-- [ ] T016 [CR-001, CR-002] Provide Python code example for Publisher/Subscriber.
+- [X] T013 Create section file `docs/chapter1/1.3-nodes-topics.md` with Docusaurus front-matter.
+- [X] T014 [CR-001] Draft content for "Asynchronous Communication" focusing on Nodes.
+- [X] T015 [CR-002] Draft content for "Continuous Data Streaming" focusing on Topics.
+- [X] T016 [CR-001, CR-002] Provide Python code example for Publisher/Subscriber.
 
 ---
 
@@ -59,9 +59,9 @@
 
 **Purpose**: Write content for "1.4 Querying and Commanding: Services".
 
-- [ ] T017 Create section file `docs/chapter1/1.4-services.md` with Docusaurus front-matter.
-- [ ] T018 [CR-003] Draft content for "Synchronous Request-Response" and "State Management".
-- [ ] T019 [CR-003] Provide Python code example for Client/Server Service.
+- [X] T017 Create section file `docs/chapter1/1.4-services.md` with Docusaurus front-matter.
+- [X] T018 [CR-003] Draft content for "Synchronous Request-Response" and "State Management".
+- [X] T019 [CR-003] Provide Python code example for Client/Server Service.
 
 ---
 
@@ -69,9 +69,9 @@
 
 **Purpose**: Write content for "1.5 Executing Complex Behaviors: Actions".
 
-- [ ] T020 Create section file `docs/chapter1/1.5-actions.md` with Docusaurus front-matter.
-- [ ] T021 [CR-004] Draft content for "Managing Long-Running, Cancellable Tasks".
-- [ ] T022 [CR-004] Provide Python code example for Action Server/Client.
+- [X] T020 Create section file `docs/chapter1/1.5-actions.md` with Docusaurus front-matter.
+- [X] T021 [CR-004] Draft content for "Managing Long-Running, Cancellable Tasks".
+- [X] T022 [CR-004] Provide Python code example for Action Server/Client.
 
 ---
 
@@ -79,9 +79,9 @@
 
 **Purpose**: Write content for "1.6 Assembling the Nervous System: Packages, Launch Files, and QoS".
 
-- [ ] T023 Create section file `docs/chapter1/1.6-packages-launch-qos.md` with Docusaurus front-matter.
-- [ ] T024 [CR-005] Draft content for "Creating a ROS 2 Package" and "Writing a Python Launch File".
-- [ ] T025 Draft content for "Understanding Quality of Service (QoS)".
+- [X] T023 Create section file `docs/chapter1/1.6-packages-launch-qos.md` with Docusaurus front-matter.
+- [X] T024 [CR-005] Draft content for "Creating a ROS 2 Package" and "Writing a Python Launch File".
+- [X] T025 Draft content for "Understanding Quality of Service (QoS)".
 
 ---
 
