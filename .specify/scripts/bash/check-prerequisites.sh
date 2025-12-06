@@ -22,7 +22,14 @@ if [ ! -f "$feature_spec" ]; then
     exit 1
 fi
 
-if [ "$json_output" = true ] && [ "$paths_only" = true ]; then
-    echo "{\"FEATURE_DIR\":\"$feature_dir\",\"FEATURE_SPEC\":\"$feature_spec\"}"
-fi
-
+if [ "$json_output" = true ]; then
+    if [ "$paths_only" = true ]; then
+        echo "{"FEATURE_DIR":"$feature_dir","FEATURE_SPEC":"$feature_spec"}"
+    else
+        docs_json="["
+        for doc in "$feature_dir"/*.md;
+        do
+            docs_json+=\"$doc\","
+        done
+        docs_json=${docs_json%,}
+        docs_json+=
