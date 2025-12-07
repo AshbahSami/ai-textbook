@@ -6,7 +6,7 @@
 
 **Purpose**: Create the directory structure for the new chapter.
 
-- [ ] T001 Create directory `temp-docusaurus-site/docs/module4-vla-capstone`
+- [X] T001 Create directory `temp-docusaurus-site/docs/module4-vla-capstone`
 
 ---
 
@@ -18,18 +18,18 @@
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/index.md`
-- [ ] T003 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/m4-1-voice-to-action.md`
-- [ ] T004 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/m4-2-gemini-cognitive-planner.md`
-- [ ] T005 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/m4-3-capstone-integration.md`
+- [X] T002 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/index.md`
+- [X] T003 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/m4-1-voice-to-action.md`
+- [X] T004 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/m4-2-gemini-cognitive-planner.md`
+- [X] T005 [US1] Create and write content for `temp-docusaurus-site/docs/module4-vla-capstone/m4-3-capstone-integration.md`
 
 ---
 
 ## Phase 3: Polish & Cross-Cutting Concerns
 
-- [ ] T006 Review and edit all created markdown files for clarity, correctness, and formatting.
-- [ ] T007 Add all necessary images and diagrams to the `temp-docusaurus-site/static/img/` directory and link them in the markdown files.
-- [ ] T008 Update the Docusaurus sidebar configuration in `temp-docusaurus-site/sidebars.ts` to include the new chapter.
+- [X] T006 Review and edit all created markdown files for clarity, correctness, and formatting.
+- [X] T007 Add all necessary images and diagrams to the `temp-docusaurus-site/static/img/` directory and link them in the markdown files.
+- [X] T008 Update the Docusaurus sidebar configuration in `temp-docusaurus-site/sidebars.ts` to include the new chapter.
 
 ---
 
