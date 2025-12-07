@@ -6,7 +6,7 @@
 
 **Purpose**: Create the directory structure for the new chapter.
 
-- [ ] T001 Create directory `temp-docusaurus-site/docs/module2-digital-twin`
+- [X] T001 Create directory `temp-docusaurus-site/docs/module2-digital-twin`
 
 ---
 
@@ -18,20 +18,20 @@
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/index.md`
-- [ ] T003 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-1-gazebo-physics.md`
-- [ ] T004 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-2-sensor-simulation.md`
-- [ ] T005 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-3-unity-hri.md`
-- [ ] T006 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-4-ros-bridge.md`
-- [ ] T007 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-5-troubleshooting.md`
+- [X] T002 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/index.md`
+- [X] T003 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-1-gazebo-physics.md`
+- [X] T004 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-2-sensor-simulation.md`
+- [X] T005 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-3-unity-hri.md`
+- [X] T006 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-4-ros-bridge.md`
+- [X] T007 [US1] Create and write content for `temp-docusaurus-site/docs/module2-digital-twin/m2-5-troubleshooting.md`
 
 ---
 
 ## Phase 3: Polish & Cross-Cutting Concerns
 
-- [ ] T008 Review and edit all created markdown files for clarity, correctness, and formatting.
-- [ ] T009 Add all necessary images and diagrams to the `temp-docusaurus-site/static/img/` directory and link them in the markdown files.
-- [ ] T010 Update the Docusaurus sidebar configuration in `temp-docusaurus-site/sidebars.ts` to include the new chapter.
+- [X] T008 Review and edit all created markdown files for clarity, correctness, and formatting.
+- [X] T009 Add all necessary images and diagrams to the `temp-docusaurus-site/static/img/` directory and link them in the markdown files.
+- [X] T010 Update the Docusaurus sidebar configuration in `temp-docusaurus-site/sidebars.ts` to include the new chapter.
 
 ---
 
