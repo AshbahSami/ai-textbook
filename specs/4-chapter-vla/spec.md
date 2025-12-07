@@ -35,6 +35,19 @@ An expert AI and Robotics Integrator wants to build a complete Vision-Language-A
 -   **FR-006**: The final section of the chapter MUST be a comprehensive guide for the Capstone Project.
 -   **FR-007**: All cognitive planning and reasoning MUST use the Gemini API/SDKs.
 -   **FR-008**: The chapter MUST integrate skills and components from all previous modules.
+-   **FR-009**: The robot SHOULD provide audible feedback if Whisper fails to transcribe audio or provides nonsensical transcription.
+-   **FR-010**: The robot SHOULD provide audible feedback if Gemini fails to generate a valid plan from a transcribed command.
+-   **FR-011**: API keys for Whisper and Gemini MUST be managed securely using environment variables or a secure secrets management system.
+
+### Explicit Out-of-Scope
+
+- Highly dexterous, multi-fingered manipulation
+- Handling deformable or fragile objects
+- Complex tool use
+
+### Non-Functional Requirements
+
+-   **NFR-001**: The end-to-end latency from voice command to robot action should be between 1-3 seconds.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -47,7 +60,17 @@ An expert AI and Robotics Integrator wants to build a complete Vision-Language-A
 
 ### Measurable Outcomes
 
--   **SC-001**: A user can issue a voice command like "find the red ball" and the system correctly transcribes it and initiates the appropriate ROS 2 action sequence.
+-   **SC-001**: A user can issue a voice command like "find the red ball" and the system correctly transcribes it and initiates the appropriate ROS 2 action sequence within 3 seconds.
 -   **SC-002**: The Gemini-based cognitive planner can successfully generate a valid action sequence for at least 3 different complex commands.
 -   **SC-003**: The integrated VLA pipeline can successfully complete a multi-step task (e.g., "go to the table and pick up the cube") in simulation from a single voice command.
 -   **SC-004**: The Capstone Project guide clearly outlines all project goals and provides a clear roadmap for completion.
+
+## Clarifications
+
+### Session 2025-12-07
+
+- Q: What is the target end-to-end latency from the moment a voice command is issued to the moment the robot begins executing the first action? → A: 1-3 seconds.
+- Q: How should the system handle cases where OpenAI Whisper fails to transcribe the audio or provides a nonsensical transcription? → A: The robot should provide audible feedback to the user (e.g., "I'm sorry, I didn't understand that. Please try again.") and wait for the next command.
+- Q: What is the desired behavior if the Gemini API fails to generate a valid plan from a transcribed command (e.g., due to ambiguity, safety constraints, or API errors)? → A: The robot should provide audible feedback to the user (e.g., "I'm sorry, I cannot plan that action. Can you rephrase?") and wait for a new command.
+- Q: How should API keys for Whisper and Gemini be managed and secured within the ROS 2 environment? → A: Use environment variables and load them securely (e.g., using `ros2 launch` arguments or a secure secrets management system).
+- Q: What specific types of manipulation tasks should be considered out-of-scope for the Capstone Project to keep it focused? → A: Highly dexterous, multi-fingered manipulation; handling deformable or fragile objects; complex tool use.
