@@ -21,7 +21,11 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  onBrokenLinks: 'throw',
+  organizationName: 'your-org', // Usually your GitHub org/user name.
+  projectName: 'your-project', // Usually your repo name.
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -61,6 +65,17 @@ const config: Config = {
           position: 'left',
           label: 'Textbook',
         },
+        {
+          to: '/signup',
+          label: 'Sign Up',
+          position: 'right',
+        },
+        {
+          to: '/signin',
+          label: 'Sign In',
+          position: 'right',
+        },
+
 
       ],
     },
