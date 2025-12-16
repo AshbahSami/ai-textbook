@@ -1,21 +1,15 @@
-// setup-localStorage-polyfill.js
-// This file provides a simple polyfill for localStorage for Node.js environment
-// during Docusaurus build process.
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-if (typeof global.localStorage === 'undefined') {
-  global.localStorage = {
-    _data: {},
-    setItem: function (id, val) {
-      return (this._data[id] = String(val));
-    },
-    getItem: function (id) {
-      return this._data.hasOwnProperty(id) ? this._data[id] : undefined;
-    },
-    removeItem: function (id) {
-      return delete this._data[id];
-    },
-    clear: function () {
-      return (this._data = {});
-    },
-  };
-}
+// Mock an empty localStorage as it is not available in Node.js
+const localStorage = {
+  getItem: () => null,
+  setItem: () => {},
+  removeItem: () => {},
+};
+
+global.localStorage = localStorage;

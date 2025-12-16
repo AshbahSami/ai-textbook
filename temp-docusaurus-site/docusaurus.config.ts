@@ -26,6 +26,10 @@ const config: Config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
+  customFields: {
+    BACKEND_API_URL: process.env.BACKEND_API_URL || 'http://localhost:3001',
+    BETTER_AUTH_BASE_URL: process.env.BETTER_AUTH_BASE_URL || 'https://www.better-auth.com',
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -34,6 +38,10 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  clientModules: [
+    './setup-localStorage-polyfill.js',
+  ],
 
   presets: [
     [
@@ -48,6 +56,10 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  plugins: [
+    './src/plugins/chatbot-plugin',
   ],
 
   themeConfig: {

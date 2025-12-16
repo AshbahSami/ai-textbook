@@ -1,0 +1,129 @@
+openapi: 3.0.0
+info:
+  title: Better-Auth & Personalization API
+  version: 1.0.0
+  description: API for user authentication via Better-Auth and management of personalization data.
+servers:
+  - url: /api/auth
+    description: Authentication API Base Path
+paths:
+  /register:
+    post:
+      summary: Register a new user
+      operationId: registerUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - background_data
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: User's email address
+                password:
+                  type: string
+                  format: password
+                  description: User's password
+                background_data:
+                  type: object
+                  description: User's technical background for personalization
+                  properties:
+                    softwareBackground:
+                      type: object
+                      properties:
+                        primaryLanguages:
+                          type: array
+                          items:
+                            type: string
+                        cloudFamiliarity:
+                          type: string
+                          enum: [None, Beginner, Intermediate, Advanced]
+                        preferredOs:
+                          type: string
+                          enum: [Linux, macOS, Windows, Hybrid]
+                        databaseExperience:
+                          type: array
+                          items:
+                            type: string
+                    hardwareBackground:
+                      type: object
+                      properties:
+                        embeddedSystemsExperience:
+                          type: string
+                          enum: [Yes, No, Some C/Assembly]
+                        gpuFamiliarity:
+                          type: string
+                          enum: [None, Basic, Advanced]
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  token:
+                    type: string
+                    description: Session token (optional, if immediate sign-in)
+        '400':
+          description: Invalid input or user already exists
+        '500':
+          description: Internal server error or Better-Auth service unavailable
+  /login:
+    post:
+      summary: Authenticate user and create a session
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: User authenticated successfully
+          headers:
+            Set-Cookie:
+              description: HTTP-only session cookie
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  redirectUrl:
+                    type: string
+        '401':
+          description: Invalid credentials
+        '500':
+          description: Internal server error or Better-Auth service unavailable
+  /logout:
+    post:
+      summary: Invalidate current user session
+      operationId: logoutUser
+      responses:
+        '200':
+          description: User logged out successfully
+        '500':
+          description: Internal server error

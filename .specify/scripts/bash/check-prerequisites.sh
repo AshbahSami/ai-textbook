@@ -36,20 +36,17 @@ if [ "$json_output" = true ]; then
     if [ "$paths_only" = true ]; then
         echo "{\"FEATURE_DIR\":\"$feature_dir\",\"FEATURE_SPEC\":\"$feature_spec\"}"
     else
-        docs_json="["
-        for doc in "$feature_dir"/*.md;
-do
-            docs_json+=\""$doc\"","
+        docs=()
+        for doc in "$feature_dir"/*.md; do
+            docs+=("\"$doc\"")
         done
-        docs_json=${docs_json%,}
-        docs_json+="]"
+        
+        docs_json=$(IFS=,; echo "${docs[*]}")
 
         if [ "$include_tasks" = true ]; then
-             echo "{\"FEATURE_DIR\":\"$feature_dir\",\"AVAILABLE_DOCS\":$docs_json, \"FEATURE_TASKS\":\"$feature_tasks\"}"
+             echo "{\"FEATURE_DIR\":\"$feature_dir\",\"AVAILABLE_DOCS\":[$docs_json], \"FEATURE_TASKS\":\"$feature_tasks\"}"
         else
-            echo "{\"FEATURE_DIR\":\"$feature_dir\",\"AVAILABLE_DOCS\":$docs_json}"
+            echo "{\"FEATURE_DIR\":\"$feature_dir\",\"AVAILABLE_DOCS\":[$docs_json]}"
         fi
     fi
 fi
-
-

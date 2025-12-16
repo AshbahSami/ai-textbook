@@ -1,12 +1,20 @@
-import React from 'react';
-import { User } from 'firebase/auth';
+// temp-docusaurus-site/src/auth/AuthContext.ts
+import { createContext, useContext } from 'react';
 
-export interface AuthContextType {
-  user: User | null;
+interface AuthContextType {
+  isAuthenticated: boolean;
+  user: { email: string; betterAuthUserId: string } | null; // Basic user info
+  login: (email: string, betterAuthUserId: string) => void;
+  logout: () => void;
   loading: boolean;
 }
 
-export const AuthContext = React.createContext<AuthContextType>({
-  user: null,
-  loading: true,
-});
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export function useAuth() {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+}

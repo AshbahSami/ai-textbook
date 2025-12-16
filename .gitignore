@@ -2,9 +2,27 @@
 .docusaurus/
 build/
 node_modules/
+.env*
+*.log
 
 # Python
 __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Node.js/TypeScript
+dist/
+*.tsbuildinfo
+.npm/
+.yarn/
+/packages/**/node_modules/
+/packages/**/dist/
+/packages/**/build/
+/packages/**/coverage/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/

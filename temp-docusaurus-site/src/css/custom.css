@@ -29,6 +29,11 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.navbar {
+  z-index: 9999; /* Ensure navbar is on top */
+  position: relative; /* z-index requires a positioned element */
+}
+
 /* Custom styles for signin and signup pages */
 main {
   display: flex;
@@ -48,6 +53,16 @@ main form {
   border: 1px solid #eee;
   border-radius: 8px;
   background-color: var(--ifm-background-color);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  main form {
+    padding: 1.5rem;
+  }
 }
 
 main form div {
