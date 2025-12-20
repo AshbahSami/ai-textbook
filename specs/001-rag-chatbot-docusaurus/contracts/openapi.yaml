@@ -1,0 +1,224 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API
+  description: API for the RAG Chatbot for Docusaurus documentation sites
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://api.example.com
+    description: Production server
+
+paths:
+  /api/v1/ingest:
+    post:
+      summary: Ingest documentation content
+      description: Process and store documentation content for RAG retrieval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                source_type:
+                  type: string
+                  enum: [url, directory, file]
+                  description: The type of source to ingest
+                source_path:
+                  type: string
+                  description: Path or URL to the documentation source
+                collection_name:
+                  type: string
+                  description: Name of the Qdrant collection to store embeddings
+              required:
+                - source_type
+                - source_path
+      responses:
+        '200':
+          description: Documentation successfully ingested
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Documentation ingested successfully"
+                  documents_processed:
+                    type: integer
+                    example: 15
+        '400':
+          description: Bad request - invalid parameters
+        '500':
+          description: Internal server error
+
+  /api/v1/chat/{session_id}:
+    get:
+      summary: Get chat session history
+      description: Retrieve the message history for a specific chat session
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Unique identifier for the chat session
+      responses:
+        '200':
+          description: Chat session history retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  session_id:
+                    type: string
+                    example: "session_12345"
+                  messages:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ChatMessage'
+        '404':
+          description: Chat session not found
+        '500':
+          description: Internal server error
+    post:
+      summary: Send a message in a chat session
+      description: Send a user message and receive an AI response
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Unique identifier for the chat session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The user's message/question
+                highlighted_text:
+                  type: string
+                  description: Optional highlighted text from the documentation
+              required:
+                - message
+      responses:
+        '200':
+          description: Message processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: The AI-generated response
+                  sources:
+                    type: array
+                    items:
+                      type: string
+                    description: List of documentation sources used in the response
+                  session_id:
+                    type: string
+                    example: "session_12345"
+        '404':
+          description: Chat session not found
+        '500':
+          description: Internal server error
+
+  /api/v1/chat:
+    post:
+      summary: Create a new chat session
+      description: Initialize a new chat session
+      responses:
+        '200':
+          description: Chat session created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  session_id:
+                    type: string
+                    example: "session_12345"
+                  created_at:
+                    type: string
+                    format: date-time
+                    example: "2025-12-20T10:00:00Z"
+
+  /api/v1/query:
+    post:
+      summary: Query documentation without a session
+      description: Ask a question about the documentation without creating a session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: The question/query about documentation
+                highlighted_text:
+                  type: string
+                  description: Optional highlighted text from the documentation
+              required:
+                - query
+      responses:
+        '200':
+          description: Query processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: The AI-generated response
+                  sources:
+                    type: array
+                    items:
+                      type: string
+                    description: List of documentation sources used in the response
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    ChatMessage:
+      type: object
+      properties:
+        message_id:
+          type: string
+          example: "msg_12345"
+        sender_type:
+          type: string
+          enum: [user, assistant]
+          example: "user"
+        content:
+          type: string
+          example: "How do I configure authentication?"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-12-20T10:00:00Z"
+        context_sources:
+          type: array
+          items:
+            type: string
+          example: ["auth-config.md", "security-overview.md"]
+      required:
+        - message_id
+        - sender_type
+        - content
+        - timestamp
